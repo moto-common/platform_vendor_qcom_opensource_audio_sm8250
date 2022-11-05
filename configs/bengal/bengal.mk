@@ -317,10 +317,6 @@ PRODUCT_PROPERTY_OVERRIDES += aaudio.hw_burst_min_usec=2000
 PRODUCT_PROPERTY_OVERRIDES += \
 vendor.audio.enable.mirrorlink=false
 
-#enable voicecall speaker stereo
-PRODUCT_PROPERTY_OVERRIDES += \
-persist.vendor.audio.voicecall.speaker.stereo=true
-
 #enable AAC frame ctl for A2DP sinks
 PRODUCT_PROPERTY_OVERRIDES += \
 persist.vendor.bt.aac_frm_ctl.enabled=true
