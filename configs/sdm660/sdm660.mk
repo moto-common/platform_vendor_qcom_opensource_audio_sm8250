@@ -22,7 +22,7 @@ AUDIO_FEATURE_ENABLED_ALAC_OFFLOAD := true
 AUDIO_FEATURE_ENABLED_APE_OFFLOAD := true
 AUDIO_FEATURE_ENABLED_AAC_ADTS_OFFLOAD := true
 AUDIO_FEATURE_ENABLED_PROXY_DEVICE := true
-AUDIO_FEATURE_ENABLED_SSR := true
+AUDIO_FEATURE_ENABLED_SSR := false
 AUDIO_FEATURE_ENABLED_DTS_EAGLE := false
 BOARD_USES_SRS_TRUEMEDIA := false
 DTS_CODEC_M_ := false
@@ -36,7 +36,7 @@ AUDIO_FEATURE_ENABLED_VOICE_PRINT := false
 USE_LEGACY_AUDIO_DAEMON := false
 USE_LEGACY_AUDIO_MEASUREMENT := false
 AUDIO_FEATURE_ENABLED_AHAL_EXT := false
-AUDIO_FEATURE_ENABLED_EXTENDED_COMPRESS_FORMAT := true
+AUDIO_FEATURE_ENABLED_EXTENDED_COMPRESS_FORMAT := false
 DOLBY_ENABLE := false
 endif
 
@@ -151,13 +151,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     vendor.audio_hal.period_size=192
 
-##fluencetype can be "fluence" or "fluencepro" or "none"
-PRODUCT_PROPERTY_OVERRIDES += \
-ro.vendor.audio.sdk.fluencetype=none\
-persist.vendor.audio.fluence.voicecall=true\
-persist.vendor.audio.fluence.voicerec=false\
-persist.vendor.audio.fluence.speaker=true
-
 #disable tunnel encoding
 PRODUCT_PROPERTY_OVERRIDES += \
 vendor.audio.tunnel.encode=false
@@ -165,10 +158,6 @@ vendor.audio.tunnel.encode=false
 #Disable RAS Feature by default
 PRODUCT_PROPERTY_OVERRIDES += \
 persist.vendor.audio.ras.enabled=false
-
-#Buffer size in kbytes for compress offload playback
-PRODUCT_PROPERTY_OVERRIDES += \
-vendor.audio.offload.buffer.size.kb=64
 
 #Minimum duration for offload playback in secs
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -231,10 +220,6 @@ vendor.audio.flac.sw.decoder.24bit=true
 #timeout duration updates to default timeout of 5sec once the system is ready.
 PRODUCT_PROPERTY_OVERRIDES += \
 vendor.audio.hal.boot.timeout.ms=20000
-
-#split a2dp DSP supported encoder list
-PRODUCT_PROPERTY_OVERRIDES += \
-persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxhd-aac
 
 # A2DP offload support
 PRODUCT_PROPERTY_OVERRIDES += \
